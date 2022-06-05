@@ -42,16 +42,17 @@ class AddNote : AppCompatActivity() {
         val database: NoteDatabase?=NoteDatabase.getInstance(context = this)
         val noteDao:NoteDao?=database?.noteDao()
         val date:String=
-            SimpleDateFormat("EEE, DD MMM").format(Date())
+            SimpleDateFormat("EEE, DD MMM yy").format(Date())
+        Toast.makeText(this,"$date",Toast.LENGTH_LONG).show()
         val note= Note(0,titleText,descText,date)
         GlobalScope.launch{
             noteDao?.insert(note)
             withContext(Dispatchers.Main){
-                Toast.makeText(this@AddNote,"Note saved",Toast.LENGTH_LONG).show()
+                Toast.makeText(this@AddNote,"Note saved $date",Toast.LENGTH_LONG).show()
                 finish()
             }
         }
-        noteDao?.insert(note)
+//        noteDao?.insert(note)
 
     }
 

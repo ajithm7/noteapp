@@ -9,9 +9,9 @@ interface NoteDao {
     fun insert(note:Note)
     @Update
     fun update(note:Note)
-    @Delete
-    fun delete()
-    @Query("SELECT *FROM note_table" )
+//    @Delete
+//    fun delete()
+    @Query("DELETE FROM note_table" )
     fun clear()
     @Query("SELECT * FROM note_table")
     fun getAllNotes():List<Note>

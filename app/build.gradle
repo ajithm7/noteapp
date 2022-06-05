@@ -60,6 +60,12 @@ plugins {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 
 
+
+
+        implementation("androidx.room:room-runtime:$room_version")
+        // annotationProcessor("androidx.room:room-compiler:$roomVersion")
+        kapt("androidx.room:room-compiler:$room_version")
+
 //
 //    implementation "android.arch.persistence.room:runtime:$room_version"
 //    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
